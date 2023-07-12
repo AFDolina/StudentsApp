@@ -43,8 +43,10 @@ dependencies {
     // Networking
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
     implementation "com.squareup.okhttp3:okhttp:4.10.0"
+    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
+
 
     //Coroutine
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
@@ -66,4 +68,10 @@ dependencies {
     implementation 'androidx.databinding:baseLibrary:3.2.0-alpha11'
     kapt 'androidx.room:room-compiler:2.5.1'
 
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.5.1'
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso-allure-support:1.5.1'
+    androidTestImplementation("com.github.tomakehurst:wiremock:2.23.0") {
+        exclude group: 'org.apache.httpcomponents', module: 'httpclient'
+    }
 }

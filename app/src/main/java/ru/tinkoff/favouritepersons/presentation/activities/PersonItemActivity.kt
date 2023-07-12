@@ -147,7 +147,7 @@ class PersonItemActivity : AppCompatActivity() {
 
     private fun launchAddMode() {
         twTitleScreen.setText(R.string.person_layout_titile_add)
-        prefillFormTestData()
+//        prefillFormTestData()
 
         submitButton.setOnClickListener {
             viewModelPersonItem.addPersonItem(

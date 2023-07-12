@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "STUDENT_GENDER",
+      "name": {
+        "title": "Mr",
+        "first": "STUDENT_NAME",
+        "last": "STUDENT_SURNAME"
+      },
+      "location": {
+        "street": {
+          "number": 8780,
+          "name": "Main Road"
+        },
+        "city": "Oxford",
+        "state": "Surrey",
+        "country": "United Kingdom",
+        "postcode": "RM1W 9ZD",
+        "coordinates": {
+          "latitude": "-11.8610",
+          "longitude": "-103.6178"
+        },
+        "timezone": {
+          "offset": "+7:00",
+          "description": "Bangkok, Hanoi, Jakarta"
+        }
+      },
+      "email": "rafael.mccoy@example.com",
+      "login": {
+        "uuid": "c9ce5ad9-db17-4e56-8da7-93962297db16",
+        "username": "purplekoala618",
+        "password": "stratus",
+        "salt": "1SgB5wzr",
+        "md5": "4442f4b5ef74ceca6734e49adf01f961",
+        "sha1": "85abdadc6e373ff0bbf79eae723b2d06d87702d1",
+        "sha256": "3dc28c6ec9d84c648b85b6540d26cbfb85d9bcda3de38994f330b419d810ca98"
+      },
+      "dob": {
+        "date": "STUDENT_BDATET08:27:03.986Z",
+        "age": "STUDENT_AGE"
+      },
+      "registered": {
+        "date": "2014-09-26T20:54:44.174Z",
+        "age": 8
+      },
+      "phone": "016974 90199",
+      "cell": "07627 439229",
+      "id": {
+        "name": "NINO",
+        "value": "HC 45 43 59 Z"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/39.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/39.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/39.jpg"
+      },
+      "nat": "GB"
+    }
+  ],
+  "info": {
+    "seed": "def98f3e23a4f0c6",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

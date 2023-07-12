@@ -38,8 +38,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val deletePersonItemUseCase: DeletePersonItemUseCase
     private val addPersonItemUseCase: AddPersonItemUseCase
     private val getPersonItemFromNetworkUseCase: GetPersonItemFromNetworkUseCase
+    private var job: Job
 
     init {
+        job  = Job()
         val randomUserApiService = RetrofitService.getInstance(getBaseUrlForService(application))
         val dao = PersonDataBase.getDBClient(application).personsDao()
         val repository = PersonListRepositoryImpl.getInstance(dao, randomUserApiService)
@@ -66,11 +68,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         isLoading.postValue( false)
     }
 
-    private lateinit var job: Job
-
     fun getRandomPers() {
         isLoading.value = true
-        job  = Job()
         val uiScope = CoroutineScope(Dispatchers.IO + job + handler)
 
         uiScope.launch {

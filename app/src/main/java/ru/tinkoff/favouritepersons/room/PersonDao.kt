@@ -27,4 +27,6 @@ interface PersonDao {
 
     @Delete
     suspend fun deletePerson(person : PersonItem)
+    @Query("DELETE FROM person")
+    fun clearTable()
 }
