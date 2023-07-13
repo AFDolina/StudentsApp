@@ -10,6 +10,7 @@ import io.github.kakaocup.kakao.text.KButton
 import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
 import ru.tinkoff.favouritepersons.R
+import ru.tinkoff.favouritepersons.utils.StudentInfo
 
 
 class MainScreen : BaseScreen() {
@@ -45,6 +46,37 @@ class MainScreen : BaseScreen() {
 
     fun deleteStudentCard() {
         studentCard { swipeLeft() }
+    }
+
+    fun checkPrivateInfoText(cardPosition: Int, expectedText: String) {
+        studentCard {
+            childAt<MainScreen.CardView>(cardPosition) {
+                privateInfo.hasText(expectedText)
+            }
+        }
+    }
+
+    fun checkNameText(cardPosition: Int, expectedName: String, expectedSurname: String) {
+        studentCard {
+            childAt<MainScreen.CardView>(cardPosition) {
+                name {
+                    hasText("$expectedName $expectedSurname")
+                }
+            }
+        }
+    }
+
+    fun checkStudentCardText(cardPosition: Int, studentInfo: StudentInfo, age: Int) {
+        studentCard {
+            childAt<MainScreen.CardView>(cardPosition) {
+                name.hasText("${studentInfo.name} ${studentInfo.surname}")
+                privateInfo.hasText("Male, $age")
+                email.hasText(studentInfo.email)
+                phone.hasText(studentInfo.phone)
+                address.hasText(studentInfo.address)
+                rating.hasText(studentInfo.score)
+            }
+        }
     }
 
     companion object {

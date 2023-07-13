@@ -139,19 +139,9 @@ class MainScreenTest : TestCase(kaspressoBuilder) {
             addPersonByNetwork.click()
             actionItemSort.click()
             rb_age.click()
-            studentCard {
-                firstChild<MainScreen.CardView> {
-                    privateInfo.hasText("Male, 88")
-                }
-                childAt<MainScreen.CardView>(1) {
-                    privateInfo.hasText("Male, 22")
-                }
-                childAt<MainScreen.CardView>(2) {
-                    privateInfo.hasText("Male, 7")
-                }
-
-            }
-
+            checkPrivateInfoText(0, "Male, 88")
+            checkPrivateInfoText(1, "Male, 22")
+            checkPrivateInfoText(2, "Male, 7")
         }
     }
 
@@ -196,13 +186,7 @@ class MainScreenTest : TestCase(kaspressoBuilder) {
             submitButton.click()
         }
         with(MainScreen()) {
-            studentCard {
-                firstChild<MainScreen.CardView> {
-                    name {
-                        hasText("$NEW_STUDENT_NAME ${studentInfo.surname}")
-                    }
-                }
-            }
+            checkNameText(0, NEW_STUDENT_NAME, studentInfo.surname)
         }
     }
 
@@ -217,16 +201,7 @@ class MainScreenTest : TestCase(kaspressoBuilder) {
             fillStudentInfo(studentInfo)
         }
         with(MainScreen()) {
-            studentCard {
-                firstChild<MainScreen.CardView> {
-                    name.hasText("${studentInfo.name} ${studentInfo.surname}")
-                    privateInfo.hasText("Male, ${studentAge}")
-                    email.hasText(studentInfo.email)
-                    phone.hasText(studentInfo.phone)
-                    address.hasText(studentInfo.address)
-                    rating.hasText(studentInfo.score)
-                }
-            }
+            checkStudentCardText(0, studentInfo, studentAge)
         }
     }
 
